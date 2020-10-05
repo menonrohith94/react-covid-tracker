@@ -5,13 +5,14 @@ import Map from './components/Map';
 import Table from './components/Table';
 import LineGraph from './components/LineGraph';
 import './App.css';
-import { sortData } from "./util.js";
+import { sortData, prettyPrintStat } from "./util.js";
+import numeral from "numeral";
 import "leaflet/dist/leaflet.css";
 
 const App = () => {
-
+  const [country, setInputCountry] = useState("worldwide");
   const [countries, setCountries] = useState([])
-  const [country, setCountry] = useState('worldwide')
+  // const [country, setCountry] = useState('worldwide')
   const [countryInfo, setCountryInfo] = useState({})
   const [mapCountries, setMapCountries] = useState([]);
   const [tableData, setTableData] = useState([])
