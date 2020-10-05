@@ -84,8 +84,8 @@ const App = () => {
               onChange={onCountryChange}
             >
               <MenuItem value="worldwide">Worldwide</MenuItem>
-              {countries.map((country) => (
-                <MenuItem value={country.value}>{country.name}</MenuItem>
+              {countries.map((country,i) => (
+                <MenuItem value={country.value} key={i}>{country.name}</MenuItem>
               ))}
             </Select>
           </FormControl>

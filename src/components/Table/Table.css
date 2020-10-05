@@ -7,16 +7,16 @@
     height: 400px;
   }
   
-  .table tr {
+  .table .table__row {
     display: flex;
     justify-content: space-between;
   }
   
-  .table td {
+  .table .table__col {
     padding: 0.5rem;
     border: none;
   }
   
-  .table tr:nth-of-type(odd) {
+  .table .table__row:nth-of-type(odd) {
     background-color: #f3f2f8;
   }

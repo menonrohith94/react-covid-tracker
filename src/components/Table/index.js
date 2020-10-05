@@ -4,14 +4,14 @@ import './Table.css'
 function Table({ countries }) {
     return (
         <div className="table">
-            {countries.map(({ country, cases }) => (
-                <tr>
-                    <td>{country}</td>
-                    <td>
-                        <strong>{cases}</strong>
-                    </td>
-                </tr>
-            ))}
+                {countries.map(({ country, cases }, i) => (
+                    <div key={i} className="table__row">
+                        <div className="table__col">{country}</div>
+                        <div className="table__col">
+                            <strong>{cases}</strong>
+                        </div>
+                    </div>
+                ))}
         </div>
     )
 }

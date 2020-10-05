@@ -25,27 +25,30 @@ const casesTypeColors = {
   },
 };
 
+//Sort
 export const sortData = (data) =>{
     const sortedData = [...data];
     return sortedData.sort((a,b)=> (a.cases > b.cases ? -1 : 1));
 }
 
+//Pretified the card data and added + sign
 export const prettyPrintStat = (stat) =>
   stat ? `+${numeral(stat).format("0.0a")}` : "+0";
 
 //Interactive circles on map for each country
 export const showDataOnMap = (data, casesType = "cases") =>
-  data.map((country) => (
+  data.map((country, i) => (
     <Circle
       center={[country.countryInfo.lat, country.countryInfo.long]}
       color={casesTypeColors[casesType].hex}
       fillColor={casesTypeColors[casesType].hex}
-      fillOpacity={0.4}
+      fillOpacity={0.4} key={i}
       radius={
         Math.sqrt(country[casesType]) * casesTypeColors[casesType].multiplier
       }
     >
-      <Popup>
+        {/* Popup entire detail of the country with couontry flag */}
+      <Popup key={i}>
         <div className="info-container">
           <div
             className="info-flag"
